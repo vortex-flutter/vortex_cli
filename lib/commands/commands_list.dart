@@ -1,5 +1,6 @@
 import 'package:vortex_cli/commands/impl/create/project/project.dart';
 import 'package:vortex_cli/commands/impl/runner/runner.dart';
+import 'package:vortex_cli/commands/impl/runner/runner_component.dart';
 
 import 'impl/create/page/page.dart';
 import 'impl/index.dart';
@@ -19,7 +20,14 @@ final List<Command> commands = [
   InstallCommand(),
   RemoveCommand(),
   UpdateCommand(),
-  RunnerCommand(),
+  CommandParent(
+    'runner',
+    [
+      RunnerCommand(),
+      RunnerComponent(),
+    ],
+    ['-r'],
+  ),
 ];
 
 class CommandParent extends Command {

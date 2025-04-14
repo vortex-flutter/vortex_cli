@@ -70,8 +70,6 @@ class CreatePageCommand extends Command {
 
       LogService.success("Generated page at: $filePath");
       LogService.info("Running router scanner to update routes...");
-
-      
     } catch (e) {
       LogService.error("Error generating page: $e");
     }

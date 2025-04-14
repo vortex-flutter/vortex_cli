@@ -17,8 +17,6 @@ abstract class Command with ArgsMixin {
   }
   int get maxParameters;
 
-  //int get minParameters;
-
   String? get codeSample;
   String get commandName;
 

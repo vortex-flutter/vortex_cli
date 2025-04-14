@@ -7,7 +7,7 @@ import '../../interface/command.dart';
 
 class RunnerCommand extends Command {
   @override
-  String get commandName => 'runner';
+  String get commandName => 'page';
 
   @override
   List<String> get alias => ['module', '-p', '-m'];
