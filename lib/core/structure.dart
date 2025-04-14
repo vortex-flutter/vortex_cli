@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:path/path.dart' as p;
 import 'package:recase/recase.dart';
-import 'package:vortex_cli/utils/logger.dart';
 import '../exception/cli_exception.dart';
 import '../models/file_model.dart';
 
@@ -29,13 +28,6 @@ class Structure {
     String? on,
     String? folderName,
   }) {
-    LogService.debug('Paths: $_paths');
-    LogService.debug('name: $name');
-    LogService.debug('command: $command');
-    LogService.debug('wrapperFolder: $wrapperFolder');
-    LogService.debug('on: $on');
-    LogService.debug('folderName: $folderName');
-
     if (on != null && on != '') {
       on = replaceAsExpected(path: on).replaceAll('\\\\', '\\');
       var current = Directory('lib');
@@ -112,10 +104,6 @@ class Structure {
     required String? folderName,
   }) {
     late String betweenPaths;
-    LogService.debug('Platform: $firstPath');
-    LogService.debug('Platform: $secondPath');
-    LogService.debug('Platform: $folderName');
-
     if (Platform.isWindows) {
       betweenPaths = '\\\\';
     } else if (Platform.isMacOS || Platform.isLinux) {

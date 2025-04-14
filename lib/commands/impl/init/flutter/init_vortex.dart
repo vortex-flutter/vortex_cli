@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:vortex_cli/commands/impl/install/install_flutterwind.dart';
 import 'package:vortex_cli/commands/impl/install/install_vortex.dart';
+import 'package:vortex_cli/commands/impl/runner/runner.dart';
 
 import '../../../../core/structure.dart';
 import '../../../../samples/vortex_main.dart';
@@ -23,7 +24,7 @@ Future<void> createInitVortexPattern() async {
 
   var initialDirs = [Directory(Structure.replaceAsExpected(path: 'lib/data/'))];
   VortexMainSample(isServer: isServerProject).create();
-  await Future.wait([CreatePageCommand().execute()]);
+  await Future.wait([CreatePageCommand().execute(), RunnerCommand().execute()]);
   createListDirectory(initialDirs);
 
   LogService.success('Vortex Pattern created successfully');

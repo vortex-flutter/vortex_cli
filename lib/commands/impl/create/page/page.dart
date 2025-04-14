@@ -22,7 +22,7 @@ class CreatePageCommand extends Command {
     }
     var pageName = this.name;
     if (pageName.isEmpty || isProject) {
-      pageName = 'home';
+      pageName = 'index';
     }
 
     final pageType = flags.contains('--stateful') ? 'stateful' : 'stateless';
@@ -103,41 +103,41 @@ class CreatePageCommand extends Command {
 
     if (pageType == 'stateless') {
       return '''
-        import 'package:flutter/material.dart';
-        import 'package:flutterwind_core/flutterwind.dart';
+import 'package:flutter/material.dart';
+import 'package:vortex/vortex.dart';
 
-        /// $className page
-        @FlutterWindPage('$routePath')
-        class $className extends StatelessWidget {
-          const $className({Key? key}) : super(key: key);
+/// $className page
+@VortexPage('$routePath')
+class $className extends StatelessWidget {
+  const $className({Key? key}) : super(key: key);
 
-          @override
-          Widget build(BuildContext context) {
-            return Container();
-          }
-        }
-        ''';
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
+''';
     } else {
       return '''
-        import 'package:flutter/material.dart';
-        import 'package:flutterwind_core/flutterwind.dart';
+import 'package:flutter/material.dart';
+import 'package:vortex/vortex.dart';
 
-        /// $className page
-        @FlutterWindPage('$routePath')
-        class $className extends StatefulWidget {
-          const $className({Key? key}) : super(key: key);
+/// $className page
+@VortexPage('$routePath')
+class $className extends StatefulWidget {
+  const $className({Key? key}) : super(key: key);
 
-          @override
-          State<$className> createState() => _${className}State();
-        }
+  @override
+  State<$className> createState() => _${className}State();
+}
 
-        class _${className}State extends State<$className> {
-          @override
-          Widget build(BuildContext context) {
-            return Container();
-          }
-        }
-      ''';
+class _${className}State extends State<$className> {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
+''';
     }
   }
 
@@ -158,6 +158,8 @@ class CreatePageCommand extends Command {
   String _getClassNameFromPageName(String pageName) {
     // Ensure the class name starts with an uppercase letter
     if (pageName.isEmpty) return 'Page';
+
+    if(pageName == 'index') return 'HomePage';
 
     // If it's already PascalCase, return as is
     if (pageName[0] == pageName[0].toUpperCase()) {
