@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:path/path.dart' as p;
 import 'package:recase/recase.dart';
+import 'package:vortex_cli/utils/logger.dart';
 import '../exception/cli_exception.dart';
 import '../models/file_model.dart';
 
@@ -103,6 +104,10 @@ class Structure {
     required String? folderName,
   }) {
     late String betweenPaths;
+    LogService.debug('Platform: $firstPath');
+    LogService.debug('Platform: $secondPath');
+    LogService.debug('Platform: $folderName');
+
     if (Platform.isWindows) {
       betweenPaths = '\\\\';
     } else if (Platform.isMacOS || Platform.isLinux) {
