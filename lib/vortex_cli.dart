@@ -1,5 +1,3 @@
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+export 'package:vortex_cli/commands/impl/index.dart';
+export 'package:vortex_cli/core/generator.dart';
+export 'package:vortex_cli/extension.dart';
