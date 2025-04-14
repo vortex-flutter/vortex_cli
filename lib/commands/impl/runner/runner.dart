@@ -46,7 +46,7 @@ class RunnerCommand extends Command {
       // Generate the route registration code
       _generateRouteRegistration(projectDir, pageFiles);
 
-      LogService.info("FlutterWind router scanner completed successfully");
+      LogService.info("Vortex router scanner completed successfully");
     } catch (e, stackTrace) {
       LogService.error(
         "Error running router scanner, error: $e, stackTrace: $stackTrace",
@@ -84,11 +84,11 @@ class RunnerCommand extends Command {
         .toList();
   }
 
-  /// Check if a file contains the FlutterWindPage annotation
+  /// Check if a file contains the VortexPage annotation
   bool _containsPageAnnotation(File file) {
     try {
       final content = file.readAsStringSync();
-      return content.contains('@FlutterWindPage');
+      return content.contains('@VortexPage');
     } catch (e) {
       LogService.error("Error reading file: ${file.path}, error: $e");
       return false;
@@ -225,7 +225,7 @@ String _getPackageName(String projectDir) {
         "import 'package:${_getPackageName(projectDir)}/generated/routes.dart';",
       );
       LogService.info("void main() {");
-      LogService.info("  initializeFlutterWindRoutes();");
+      LogService.info("  initializeRoutes();");
       LogService.info("  runApp(const MyApp());");
       LogService.info("}");
     } catch (e, stackTrace) {
