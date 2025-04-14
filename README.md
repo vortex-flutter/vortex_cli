@@ -1,39 +1,96 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# Vortex CLI
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/tools/pub/writing-package-pages).
+Official CLI tool for the Vortex framework - a Nuxt.js inspired framework for building Flutter applications with ease.
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/to/develop-packages).
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+Vortex CLI helps you scaffold and manage your Vortex applications with simple commands for creating projects, pages, components, and more.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- **Project Scaffolding**: Create new Vortex projects with proper folder structure
+- **Page Generation**: Generate stateless or stateful pages with proper routing
+- **Component Management**: Create and register reusable components
+- **Automatic Route Registration**: Automatically register and manage routes
+- **Dependency Management**: Easily add or remove dependencies
 
-## Getting started
+## Installation
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+### From pub.dev
 
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
-```dart
-const like = 'sample';
+```bash
+dart pub global activate vortex_cli
 ```
 
-## Additional information
+## Project Structure
+```
+<project_name>/
+├── lib/            # Main application code
+├── test/           # Unit and widget tests
+├── pubspec.yaml    # Project dependencies and configuration
+└── vortex.config.js # Vortex configuration file
+```
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+## Project Scaffolding
+To create a new Vortex project, use the following command:
+```bash
+vortex create <project_name>
+```
+
+## Installing Packages
+To install a package, use the following command:
+```bash
+vortex add <package_name>
+```
+
+## Removing Packages
+To remove a package, use the following command:
+```bash
+vortex remove <package_name>
+```
+
+## Updating Packages
+To update a package, use the following command:
+```bash
+vortex update <package_name>
+```
+
+## Page Generation
+To generate a new page, use the following command:
+```bash
+vortex page <page_name>
+```
+### Options
+- `--stateless`: Generate a stateless page
+- `--stateful`: Generate a stateful page
+- `--dir`: Specify the directory to create the page in (default is `lib/pages`)
+- `--file`: Specify the file name to create the page in (default is `<page_name>.dart`)
+
+## Component Management
+To create a new component, use the following command:
+```bash
+vortex component <component_name>
+```
+
+## Runner
+To generate components and pages, use the following command: Vortex application, use the following command:
+```bash
+vortex runner
+```
+
+### Options
+- `--pages-dir`: Specify the directory to create the pages in (default is `lib/pages`)
+- `--verbose`: Enable verbose output
+
+## Contributing
+Contributions are welcome! Please open an issue or submit a pull request.
+
+## Credits
+This project was inspired by the Nuxt.js framework.
+
+## Support
+If you encounter any issues, please open an issue on GitHub.
+
+## Authors
+- [Kumar Yash](https://github.com/CodeSyncr)
+
+## License
+This project is licensed under the MIT License. 

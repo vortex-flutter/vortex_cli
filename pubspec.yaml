@@ -2,7 +2,12 @@ name: vortex_cli
 description: "Official CLI for VORTEX™ framework to build Flutter and Server
   Applications easily."
 version: 0.0.1
-homepage:
+repository: https://github.com/vortex-flutter/vortex_cli/tree/main
+issue_tracker: https://github.com/vortex-flutter/vortex_cli/issues
+homepage: https://vortex.brighthustle.in
+documentation: https://vortex.brighthustle.in/getting-started
+topics: [vortex, nuxt, flutter, build-system]
+funding: [https://github.com/sponsors/vortex-flutter]
 
 environment:
   sdk: ^3.7.2
