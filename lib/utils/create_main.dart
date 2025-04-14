@@ -6,7 +6,7 @@ import 'menu.dart';
 
 Future<bool> createMain() async {
   var newFileModel = Structure.model('', 'init', false);
-
+  LogService.debug('newFileModel.path: ${newFileModel.path}');
   var main = File('${newFileModel.path}main.dart');
 
   if (main.existsSync()) {

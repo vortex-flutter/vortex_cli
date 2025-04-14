@@ -28,6 +28,13 @@ class Structure {
     String? on,
     String? folderName,
   }) {
+    LogService.debug('Paths: $_paths');
+    LogService.debug('name: $name');
+    LogService.debug('command: $command');
+    LogService.debug('wrapperFolder: $wrapperFolder');
+    LogService.debug('on: $on');
+    LogService.debug('folderName: $folderName');
+
     if (on != null && on != '') {
       on = replaceAsExpected(path: on).replaceAll('\\\\', '\\');
       var current = Directory('lib');
