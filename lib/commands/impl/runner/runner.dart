@@ -21,7 +21,9 @@ class RunnerCommand extends Command {
 
     LogService.info("Running Vortex router scanner...");
     final projectDir = Directory.current.path;
+    LogService.info("Project directory: $projectDir");
     final fullPagesDir = path.join(projectDir, pagesDir);
+    LogService.info("Pages directory: $fullPagesDir");
     // Check if the pages directory exists
     if (!Directory(fullPagesDir).existsSync()) {
       LogService.error("Pages directory not found: $fullPagesDir");
