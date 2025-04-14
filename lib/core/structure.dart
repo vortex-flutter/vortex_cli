@@ -19,6 +19,7 @@ class Structure {
     'composable': replaceAsExpected(path: 'lib/composables/'),
     'plugin': replaceAsExpected(path: 'lib/plugins/'),
     'middleware': replaceAsExpected(path: 'lib/middlewares/'),
+    'init': replaceAsExpected(path: 'lib/'),
   };
 
   static FileModel model(
