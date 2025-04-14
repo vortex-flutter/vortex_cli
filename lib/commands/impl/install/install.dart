@@ -48,7 +48,7 @@ class InstallCommand extends Command {
     return true;
   }
 
-  final String? codeSample1 = LogService.code('vortex install vortex:0.0.1');
+  final String? codeSample1 = LogService.code('vortex install vortex:0.0.2');
   final String? codeSample2 = LogService.code('vortex install vortex');
 
   @override
