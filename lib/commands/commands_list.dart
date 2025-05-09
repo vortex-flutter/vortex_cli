@@ -1,6 +1,8 @@
 import 'package:vortex_cli/commands/impl/create/project/project.dart';
 import 'package:vortex_cli/commands/impl/runner/runner.dart';
 import 'package:vortex_cli/commands/impl/runner/runner_component.dart';
+import 'package:vortex_cli/commands/impl/runner/runner_composable.dart';
+import 'package:vortex_cli/commands/impl/runner/runner_plugin.dart';
 
 import 'impl/create/page/page.dart';
 import 'impl/index.dart';
@@ -9,10 +11,7 @@ import 'interface/command.dart';
 final List<Command> commands = [
   CommandParent(
     'create',
-    [
-      CreatePageCommand(),
-      CreateProjectCommand(),
-    ],
+    [CreatePageCommand(), CreateProjectCommand()],
     ['-c'],
   ),
   HelpCommand(),
@@ -22,10 +21,7 @@ final List<Command> commands = [
   UpdateCommand(),
   CommandParent(
     'runner',
-    [
-      RunnerCommand(),
-      RunnerComponent(),
-    ],
+    [RunnerCommand(), RunnerComponent(), ComposableCommand(), PluginCommand()],
     ['-r'],
   ),
 ];
