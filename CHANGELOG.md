@@ -19,3 +19,13 @@
 
 ## 0.0.5
 * Upgraded dependencies for `vortex` during project `creation` command.
+
+## 0.0.6
+* Added support for `composable` command.
+* Added support for `component` command with directory flag.
+* Added support for `page` command with pages directory flag.
+* Added support for `verbose` flag in all commands.
+* Added support for `middleware` in page annotations.
+* Added support for `composable` annotations.
+* Added support for `component` annotations.
+
